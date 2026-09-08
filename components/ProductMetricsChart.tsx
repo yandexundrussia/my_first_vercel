@@ -125,10 +125,10 @@ export default function ProductMetricsChart({
                 fontFamily: "monospace",
                 fontSize: 12,
               }}
-              formatter={(v: number | string | undefined) => [
+              formatter={((v: unknown) => [
                 `${Number(v ?? 0).toFixed(3)}${unit ? " " + unit : ""}`,
                 label,
-              ]}
+              ]) as any}
             />
             <Line
               type="monotone"
