@@ -105,7 +105,7 @@ export default function WaferMap({
       }
       ctx.fillStyle = color;
       const px = offsetX + (xs[i] - minX) * cellSize;
-      const py = offsetY + (maxY - ys[i]) * cellSize;
+      const py = offsetY + (ys[i] - minY) * cellSize;
       ctx.fillRect(px, py, cellSize, cellSize);
     }
   }, [xs, ys, bins, vals, metric, dataMin, dataMax, kind, selectedItem]);
